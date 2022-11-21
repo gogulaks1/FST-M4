@@ -1,0 +1,28 @@
+--Activity1
+
+
+For Episode4
+
+
+hive> CREATE TABLE episode4 (name STRING, line STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' TBLPROPERTIES ("skip.header.line.count"="2");
+hive> LOAD DATA LOCAL INPATH '/root/episode4_dialogues.txt/' INTO TABLE episode4;
+hive> SELECT name,COUNT(name) AS no_of_lines from episode4 GROUP BY name ORDER BY no_of_lines;
+
+
+
+For Episode5
+
+hive> CREATE TABLE episode5 (name STRING, line STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' TBLPROPERTIES ("skip.header.line.count"="2");
+hive> LOAD DATA LOCAL INPATH '/root/episode5_dialogues.txt/' INTO TABLE episode5;
+hive> SELECT name,COUNT(name) AS no_of_lines from episode4 GROUP BY name ORDER BY no_of_lines;
+
+
+
+For Episode6
+
+hive> CREATE TABLE episode6 (name STRING, line STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' TBLPROPERTIES ("skip.header.line.count"="2");
+hive> LOAD DATA LOCAL INPATH '/root/episode5_dialogues.txt/' INTO TABLE episode6;
+hive> SELECT name,COUNT(name) AS no_of_lines from episode4 GROUP BY name ORDER BY no_of_lines;
+
+
+
